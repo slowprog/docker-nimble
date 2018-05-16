@@ -24,7 +24,7 @@ if ! [ -f /etc/nimble/nimble.conf ]; then
                 rm -f /etc/nimble/nimble.conf
             fi
         fi
-    
+    fi
     if ! [ -z "$WMSPANEL_TOKEN" ]; then          
     ## Andrey Leb -- add 8082 port and password
         echo "### managment port" | /usr/bin/tee -a /etc/nimble/nimble.conf
