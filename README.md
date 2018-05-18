@@ -11,15 +11,14 @@ Usage
 From Docker registry:
 
 ```
-# docker pull rjrivero/nimble
-coming soon
+docker pull 77phnet/nimble
 ```
 
 Or build yourself:
 
 ```
 git clone https://github.com/77ph/docker-nimble.git
-docker build --rm -t 77ph/nimble docker-nimble
+docker build --rm -t 77phnet/nimble docker-nimble
 ```
 
 Running the image:
@@ -30,7 +29,7 @@ docker run --rm -p 8081:8081 -p 1935:1935 -p 8082:8082 \
     -e WMSPANEL_USER=your@user.name \
     -e WMSPANEL_PASS=your_password  \
     -e WNSPANEL_TOKEN=your_token \
-    --name nimble 77ph/nimble
+    --name nimble 77phnet/nimble
 ```
 
 Configuration
