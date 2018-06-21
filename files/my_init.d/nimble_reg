@@ -42,7 +42,7 @@ if ! [ -f /etc/nimble/nimble.conf ]; then
     fi
 fi
 
-echo "Stop of nimble register"
+echo "End of nimble register"
 
 chown -R nimble:root /etc/nimble
 chown -R nimble:root /var/cache/nimble
