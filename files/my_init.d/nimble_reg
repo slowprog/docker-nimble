@@ -30,8 +30,6 @@ if ! [ -f /etc/nimble/nimble.conf ]; then
         if ! [ -z "$WMSPANEL_SLICES" ]; then
             ARGS="--slices=$WMSPANEL_SLICES"
         fi
-        
-        ls -la /etc/nimble/
 
         # Try to register with apply-rules
         if ! /usr/bin/nimble_regutil $ARGS --apply-rules-conf \
@@ -40,21 +38,18 @@ if ! [ -f /etc/nimble/nimble.conf ]; then
             if ! /usr/bin/nimble_regutil $ARGS \
                  -u "$WMSPANEL_USER" -p "$WMSPANEL_PASS"; then
                 # Not able to register; remove config again
-                ls -al /etc/nimble/
-                if [ -f /etc/nimble/nimble.conf ]; then
-                    cat /etc/nimble/nimble.conf
-                fi
-                # rm -f /etc/nimble/nimble.conf
+                rm -f /etc/nimble/nimble.conf
             fi
         fi
     fi
+    
     if ! [ -z "$WMSPANEL_TOKEN" ]; then          
     ## Andrey Leb -- add 8082 port and password
         echo "### managment port" | /usr/bin/tee -a /etc/nimble/nimble.conf
         echo "management_listen_interfaces = *" | /usr/bin/tee -a /etc/nimble/nimble.conf
         echo "management_token = $WMSPANEL_TOKEN" | /usr/bin/tee -a /etc/nimble/nimble.conf
         echo "management_port = 8082" | /usr/bin/tee -a /etc/nimble/nimble.conf
-        # cat /etc/nimble/nimble.conf
+        cat /etc/nimble/nimble.conf
     fi
 fi
 
