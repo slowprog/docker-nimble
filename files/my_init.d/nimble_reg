@@ -15,7 +15,17 @@ if ! [ -f /etc/nimble/nimble.conf ]; then
     # Need username and password to register
     if ! [ -z "$WMSPANEL_USER" ]; then
 
-        cp -fr /etc/nimble.conf/* /etc/nimble
+        if [ ! -d /etc/nimble ];
+            echo "/etc/nimble don't exist"
+            mkdir /etc/nimble
+        fi
+        
+        if [ -d /etc/nimble.conf/ ]; then
+            cp -fr /etc/nimble.conf/* /etc/nimble/
+        else
+            echo "/etc/nimble.conf/ don't exist"
+        fi    
+        
         ARGS=""
         if ! [ -z "$WMSPANEL_SLICES" ]; then
             ARGS="--slices=$WMSPANEL_SLICES"
