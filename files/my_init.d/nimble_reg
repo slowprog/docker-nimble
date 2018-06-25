@@ -30,15 +30,21 @@ if ! [ -f /etc/nimble/nimble.conf ]; then
         if ! [ -z "$WMSPANEL_SLICES" ]; then
             ARGS="--slices=$WMSPANEL_SLICES"
         fi
+        
+        ls -la /etc/nimble/
 
         # Try to register with apply-rules
         if ! /usr/bin/nimble_regutil $ARGS --apply-rules-conf \
              -u "$WMSPANEL_USER" -p "$WMSPANEL_PASS"; then
             # Try without apply-rules
-            if ! /usr/bin/nimble_regutil $ARGS --apply-rules-conf \
+            if ! /usr/bin/nimble_regutil $ARGS \
                  -u "$WMSPANEL_USER" -p "$WMSPANEL_PASS"; then
                 # Not able to register; remove config again
-                rm -f /etc/nimble/nimble.conf
+                ls -al /etc/nimble/
+                if [ -f /etc/nimble/nimble.conf ]; then
+                    cat /etc/nimble/nimble.conf
+                fi
+                # rm -f /etc/nimble/nimble.conf
             fi
         fi
     fi
