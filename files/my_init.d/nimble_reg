@@ -15,7 +15,7 @@ if ! [ -f /etc/nimble/nimble.conf ]; then
     # Need username and password to register
     if ! [ -z "$WMSPANEL_USER" ]; then
 
-        if [ ! -d /etc/nimble ];
+        if [ ! -d /etc/nimble ]; then
             echo "/etc/nimble don't exist"
             mkdir /etc/nimble
         fi
