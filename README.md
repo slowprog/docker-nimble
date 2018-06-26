@@ -1,7 +1,7 @@
-Nimble streaming server
+Nimble Streamer
 =======================
 
-This container provides a [nimble](https://es.wmspanel.com/nimble) streaming server listening on ports **8081** (http) and **1935** (RTMP) and **8082** (managment port)
+This container provides a [nimble](https://wmspanel.com/nimble) streaming server listening on ports **8081** (http) and **1935** (RTMP) and **8082** (managment port)
 
 Nimble is "freemium" software, it is freely distributed but must be managed through the [WMSPanel Portal](https://wmspanel.com/). You will need to get an account to be able to use this application.
 
