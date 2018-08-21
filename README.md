@@ -28,7 +28,7 @@ docker run --rm -p 8081:8081 -p 1935:1935 -p 8082:8082 \
     -h instance-hostname \
     -e WMSPANEL_USER=your@user.name \
     -e WMSPANEL_PASS=your_password  \
-    -e WNSPANEL_TOKEN=your_token \
+    -e WMSPANEL_TOKEN=your_token \
     --name nimble 77phnet/nimble
 ```
 
