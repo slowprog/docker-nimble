@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM phusion/baseimage:0.11
 
 ## Install nimble and move all config files to /etc/nimble.conf
 ##
